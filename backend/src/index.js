@@ -13,7 +13,7 @@ dotenv.config();
 //const app = express();
 
 const port = process.env.PORT;
-const _dirname = path.resolve();
+const __dirname = path.resolve();
 
 //app.use(express.json());
 app.use(express.json({ limit: "10mb" }));
