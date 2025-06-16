@@ -8,7 +8,7 @@ export const getUserForSidebar = async (req, res) =>{
 
     try {
         const loggedInUserId = req.user._id;
-        const filteredUsers = await User.find({ _id : { $ne : loggedInUserId  } } ).select("-password");
+        const filteredUsers = await User.find({ _id : { $ne : loggedInUserId  } } ).select("-password");   //exclude all user whoose id is not equal to loggedinuser and exlude the password field
 
         res.status(200).json(filteredUsers);
     } catch (error) {

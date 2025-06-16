@@ -35,7 +35,7 @@ export const signup = async (req,res)=>{
 
     if(newUser){
         //generate JWT token
-        generatetoken(newUser._id, res);
+        generatetoken(newUser._id, res);      //res is passed so that cookie generated can be directly attatched to the response.
         await newUser.save();
 
         res.status(201).json({
